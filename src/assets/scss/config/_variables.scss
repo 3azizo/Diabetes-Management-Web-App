@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+:root{
+
+    --first-color: #8EC3B0;
+    --title-color: #9ED5C5;
+    --text-color:#BCEAD5;
+    --body-color: #DEF5E5;
+    // --container-color:;
+
+ 
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: .938rem;
+
+
+    @media screen and (min-width: 968px){
+        --normal-font-size: 1rem;
+    }
+}

@@ -1,0 +1,41 @@
+.settings-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .settings-section {
+    margin-bottom: 20px;
+  }
+  
+  .settings-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1d9e6f;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .settings-button:hover {
+    background-color: #1d9e6f;
+  }
+  
+  .settings-button:focus {
+    outline: none;
+  }
+  @media(min-width: 768px) {
+    .settings-container {
+        max-width: 400px;
+        padding: 10px;
+        font-size: 14px;
+        background-color: #f9f9f9;
+      }
+   
+  }

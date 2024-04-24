@@ -1,0 +1,44 @@
+.diabetes-dashboard {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .diabetes-dashboard h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .patient-data p {
+    margin-bottom: 5px;
+  }
+  
+  .advertisements {
+    margin-top: 20px;
+  }
+  
+  .diabetes-tips {
+    margin-top: 20px;
+  }
+  
+  .diabetes-tips ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .diabetes-tips li {
+    margin-bottom: 5px;
+  }
+  @media(max-width: 768px) {
+    .diabetes-dashboard h2 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+    .diabetes-dashboard {
+      padding: 10px;
+    }
+  }

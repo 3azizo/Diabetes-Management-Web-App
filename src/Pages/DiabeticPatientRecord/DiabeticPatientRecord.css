@@ -1,0 +1,71 @@
+.diabetic-patient-record {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  button {
+    cursor: pointer;
+  }
+  .record-btn{
+    width: 100%;
+  }
+  @media(max-width: 768px) {
+    .diabetic-patient-record {
+      max-width: 400px;
+      font-size: 14px;
+      padding: 10px;
+    }
+    .form-group {
+      margin-bottom: 5px;
+    }
+    .form-group label {
+      margin-bottom: 2px;
+  
+    }
+    .form-group input {
+      padding: 5px;
+      margin: 0;
+    }
+  }
+  @media(max-height: 768px) {
+    .diabetic-patient-record {
+      max-width: 400px;
+      font-size: 14px;
+      padding: 10px;
+    }
+    .form-group {
+      margin-bottom: 5px;
+    }
+    .form-group label {
+      margin-bottom: 2px;
+  
+    }
+    .form-group input {
+      padding: 5px;
+      margin: 0;
+    }
+  }
