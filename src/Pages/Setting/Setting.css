@@ -30,12 +30,11 @@
   .settings-button:focus {
     outline: none;
   }
-  @media(min-width: 768px) {
+  @media(max-width: 768px) {
     .settings-container {
-        max-width: 400px;
+        width: 300px;
         padding: 10px;
         font-size: 14px;
-        background-color: #f9f9f9;
       }
    
   }

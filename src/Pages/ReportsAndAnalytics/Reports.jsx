@@ -29,12 +29,7 @@ for (let key in data) {
     doc.text(textString, 10, 10);
     doc.save("diabetes_report.pdf");
   }
-  // date,
-  //     bloodSugar,
-  //     bloodPressure,
-  //     Insulin,
-  //     Medication,
-  //     weight
+
 
   const downloadExcel = () => {
     const data = diabetesData.map(({  date,
@@ -72,11 +67,11 @@ for (let key in data) {
       <h2>Reports and Analysis</h2>
       <div className="report-section">
         <h3>Create a Report on Diabetes (PDF/Excel):</h3>
-        <ul>
+        {/* <ul>
           <li>Patient Personal Data</li>
           <li>Diabetes Records Data</li>
           <li>Charts and Graphs for Blood Sugar Levels, Blood Pressure, and Weight</li>
-        </ul>
+        </ul> */}
         <div className="report-action">
           <button onClick={downloadPDF}>Download PDF</button>
           <button onClick={downloadExcel}>Download Excel</button>

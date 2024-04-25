@@ -1,26 +1,34 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { FaExclamation } from "react-icons/fa";
+import { BsToggles2 } from "react-icons/bs";
+
 const Authentication = ({isSingup,authHandler,checkLogin}) => {
   let [showAlert,setShowAlert]=useState(false);
-  let [email,setEmail]=useState("")
-  let [password,setPassword]=useState("")
+  let emaiLRef=useRef();
+  let passwordRef=useRef();
   let altClickHandler=(e,bol)=>{
     e.preventDefault()
     authHandler(bol)
   }
   let checkHandler=(e)=>{
     e.preventDefault();
+    let email=emaiLRef.current.value;
+    let password=passwordRef.current.value;
+    console.log(email,password);
     checkLogin({email,password})
   }
   const SingUp=() => {
+    const[isSco,setIsco]=useState(false)
   return (
     < >
-      {console.log("singup",isSingup)}
-      <input type="text" placeholder='Your Frist Name' />
+    <BsToggles2 className='singuptoggle' onClick={()=>setIsco(!isSco)} />
+     {!isSco ?<><input type="text" placeholder='Your Frist Name' />
       <input type="text" placeholder='Your Last Name' />
       <input type="text" placeholder='Your Email Address' />
       <label htmlFor="">Password</label>
       <input type="text" placeholder='your pasword' />
+     </>:<><input type="text" placeholder='age' />
+      <input type="text" placeholder='Weigth' /></> }
       <button>Sing Up</button>
       <button className='btn-alt' onClick={(e)=>altClickHandler(e,false)}>Login</button>
     </>
@@ -30,9 +38,9 @@ const Login=()=>{
  return <>
      <h4>Login </h4>
     <label htmlFor="">E-mail</label>
-    <input type="text" value={email} placeholder='Your Email Address'  onChange={(e)=>setEmail(e.target.value)}/>
+    <input type="text" ref={emaiLRef} placeholder='Your Email Address'/>
     <label htmlFor="">Password</label>
-    <input type="text" placeholder='your pasword' value={password} onChange={(e)=>setPassword(e.target.value)}/>
+    <input type="text" placeholder='your pasword' ref={passwordRef}/>
     <button onClick={(e)=>checkHandler(e)}>Login</button>
     <button className='btn-alt' onClick={(e)=>altClickHandler(e,true)}>singUp</button>
     </>

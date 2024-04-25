@@ -73,7 +73,7 @@ function App() {
 
   // }
   let checkLogin=(data)=>{
-    setIsLogin(true)
+    // setIsLogin(true)
     if(data.email===exampleAccount.email&&data.password===exampleAccount.password){
       setIsLogin(true)
     }
