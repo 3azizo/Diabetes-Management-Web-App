@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./Home.css"
 import Main from './Main';
+// import ChartsExample from './ChartsExample';
 
 import { FaHome } from "react-icons/fa";
 import { IoFileTrayFullOutline } from "react-icons/io5";
@@ -77,6 +78,7 @@ const Home = ({ patientData, tipsData }) => {
     <div className="">
       <Sidebar/>
       {activePage=="Home"&&<Main patientData={patientData} tipsData={tipsData}/>}
+      {/* {activePage=="Home"&&<ChartsExample/>} */}
       {activePage=="record forms"&&<DiabeticPatientRecord getRecordObj={getRecord}/>}
       {activePage=="Tables"&&<Table data={patientData.diabetesData}/>}
       {activePage=="Reports And Analytics"&&<Reports data={patientData}/>}

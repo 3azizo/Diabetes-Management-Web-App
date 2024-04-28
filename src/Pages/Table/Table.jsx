@@ -17,9 +17,9 @@ const Table = ({ data }) => {
           {data.map((item, index) => (
             <tr key={index}>
               <td>{item.date}</td>
-              <td>{item.bloodSugar}</td>
-              <td>{item.bloodPressure}</td>
-              <td>{item.Insulin}</td>
+              <td>{item.bloodSugar} mg/dl</td>
+              <td>{item.bloodPressure.systolic}/{item.bloodPressure.diastolic} mmHg</td>
+              <td>{item.Insulin} units</td>
               <td>{item.Medication}</td>
             </tr>
           ))}

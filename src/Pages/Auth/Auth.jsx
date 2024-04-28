@@ -21,14 +21,11 @@ const Authentication = ({isSingup,authHandler,checkLogin}) => {
     const[isSco,setIsco]=useState(false)
   return (
     < >
-    <BsToggles2 className='singuptoggle' onClick={()=>setIsco(!isSco)} />
-     {!isSco ?<><input type="text" placeholder='Your Frist Name' />
+    <input type="text" placeholder='Your Frist Name' />
       <input type="text" placeholder='Your Last Name' />
       <input type="text" placeholder='Your Email Address' />
       <label htmlFor="">Password</label>
       <input type="text" placeholder='your pasword' />
-     </>:<><input type="text" placeholder='age' />
-      <input type="text" placeholder='Weigth' /></> }
       <button>Sing Up</button>
       <button className='btn-alt' onClick={(e)=>altClickHandler(e,false)}>Login</button>
     </>

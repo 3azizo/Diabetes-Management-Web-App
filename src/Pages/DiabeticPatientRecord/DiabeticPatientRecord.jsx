@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './DiabeticPatientRecord.css';
 
 function DiabeticPatientRecord({getRecordObj}) {
-  // State for patient data
   const [bloodSugar, setBloodSugar] = useState('');
-  const [bloodPressure, setBloodPressure] = useState('');
+  
+  const [systolic,setSystolic]=useState("");
+  const [diastolic,setDiastolic]=useState("");
   const [Insulin, setInsulin] = useState('');
   const [Medication, setMedication] = useState('');
   const [weight, setWeight] = useState('');
@@ -14,20 +15,15 @@ function DiabeticPatientRecord({getRecordObj}) {
     let recordObj={
       date:new Date().toDateString(),
       bloodSugar,
-      bloodPressure,
+      bloodPressure:{systolic,diastolic},
       Insulin,
       Medication, weight
     }
   getRecordObj(recordObj)
   }
 
-  // Functions to handle input changes
   const handleBloodSugarChange = (e) => {
     setBloodSugar(e.target.value);
-  };
-
-  const handleBloodPressureChange = (e) => {
-    setBloodPressure(e.target.value);
   };
 
   const handleInsulinChange = (e) => {
@@ -59,8 +55,11 @@ function DiabeticPatientRecord({getRecordObj}) {
         <input type="text" value={Medication} onChange={handleMedicationChange} />
       </div>
       <div className="form-group">
-        <label>Blood Pressure:</label>
-        <input type="text" value={bloodPressure} onChange={handleBloodPressureChange} />
+        <label>Blood Pressure:(mmHg)</label>
+        <div style={{display:"flex",justifyContent:"space-between"}}>
+        <input type="number" value={systolic} placeholder='systolic' onChange={(e)=>setSystolic(e.target.value)} />
+        <input type="number" value={diastolic} placeholder='Diastolic' onChange={(e)=>setDiastolic(e.target.value)} />
+        </div>
       </div>
       <div className="form-group">
         <label>Weight:</label>

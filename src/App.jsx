@@ -18,35 +18,33 @@ function App() {
         bloodSugarLevel:"125",
     bloodPressure:"154",
     weight:"100",
-    lastBloodSugarReading:"120",
-    lastBloodPressureReading:"120/80",
     diabetesData:[{
       date: "Thu Apr 12 2024",
-      bloodSugar: "120 mg/dL",
-      bloodPressure: "120/80 mmHg",
-      Insulin: "10 units",
+      bloodSugar: "120",
+      bloodPressure: "120/80",
+      Insulin: "10 ",
       Medication: "Metformin 1000mg",
       weight: "70 kg"
   },{
     date: "Thu Apr 16 2024",
-    bloodSugar: "98 mg/dL",
-    bloodPressure: "110/70 mmHg",
-    Insulin: "8 units",
+    bloodSugar: "98 ",
+    bloodPressure: "110/70 ",
+    Insulin: "8",
     Medication: "Lisinopril 10mg",
     weight: "65 kg"
 },
 {
   date: "Thu Apr 20 2024",
-  bloodSugar: "110 mg/dL",
-  bloodPressure: "110/70 mmHg",
-  Insulin: "8 units",
+  bloodSugar: "110 ",
+  bloodPressure: "110/70",
+  Insulin: "8 ",
   Medication: "Lisinopril 10mg",
   weight: "65 kg"
 },
 {
   date: "Thu Apr 25 2024",
-  bloodSugar: "120 mg/dL",
-  bloodPressure: "110/70 mmHg",
+  bloodSugar: "120 ",
+  bloodPressure: "110/70",
   Insulin: "8 units",
   Medication: "Lisinopril 10mg",
   weight: "65 kg"

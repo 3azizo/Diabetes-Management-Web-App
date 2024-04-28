@@ -36,5 +36,8 @@
         padding: 10px;
         font-size: 14px;
       }
+      .settings-section {
+        margin-bottom:5px;
+      }
    
   }

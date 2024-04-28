@@ -17,8 +17,9 @@
     margin-bottom: 5px;
   }
   
-  .advertisements {
-    margin-top: 20px;
+  .advertisements-container {
+   width:80%;
+   margin: auto;
   }
   
   .diabetes-tips {
@@ -42,3 +43,19 @@
       padding: 10px;
     }
   }
+  .sliderCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h4{
+      font-size: 14px;
+    }
+    p{
+      font-size: 12px;
+      width: fit-content;
+    }
+
+  }    .swiper-pagination-bullet-active{
+      background: #1d9e6f !important ;
+    }
