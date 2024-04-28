@@ -3,7 +3,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
-    max-width: 600px;
+    width: 600px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -41,3 +41,26 @@
       }
    
   }
+  
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Adjust the label size */
+  label[for="gender"] {
+    font-size: 1.2em;
+  }
+  
+  /* Adjust the select input height */
+  select#gender {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 40px; /* Set the height as needed */
+  }
+  
