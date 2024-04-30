@@ -1,13 +1,36 @@
-import { useState } from 'react'
+import { useState,useCallback,useEffect } from 'react'
 // import SingUp from './Pages/Sing up/SingUp'
 import Authentication from './Pages/Auth/Auth'
 import "./assets/scss/styles.scss"
-import Home from "./Pages/Home/Home"
+import Home from "./Pages/Home/Home";
+import { fetchHandler } from './helpers/fetchHandler';
+import { URL } from './helpers/config';
 
 function App() {
   let [isLogin,setIsLogin]=useState(false);
   let [isSingup,setIsSingup]=useState(false);
-  let [account,setAccount]=useState({})
+  let [accounts,setAccounts]=useState({});
+
+  const fetchAccountsHandler = useCallback(async () => {
+
+  
+    try {
+    const  data=await fetchHandler(URL);
+    console.log(Object.values(data));
+      setAccounts(Object.values(data));
+    } catch (error) {
+      console.log(error.message);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchAccountsHandler();
+  }, [fetchAccountsHandler]);
+
+   async function addAccount(acc) {
+  fetchHandler(URL,acc,true)
+  }
+
 
   let exampleAccount={
     name:"example",
@@ -59,9 +82,9 @@ function App() {
     "The importance of exercising",
     "The importance of establishing a medical course",
   ];
-  const authHandler=(bol)=>{
+  const authHandler=(bol,acc=null)=>{
     setIsSingup(bol)
-
+    addAccount(acc)
   }
   // let updateAccount=(newRecord)=>{
   //   // let diabetesData=[...account.diabetesData,newRecord];
@@ -72,8 +95,10 @@ function App() {
   // }
   let checkLogin=(data)=>{
     // setIsLogin(true)
-    if(data.email===exampleAccount.email&&data.password===exampleAccount.password){
-      setIsLogin(true)
+     const account= accounts.filter(({email,password})=>email==data.email&&password==data.password);
+    console.log("test",account);
+     if(account!=="[]"){
+      setIsLogin(true);
     }
   }
   return (

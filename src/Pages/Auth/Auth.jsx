@@ -6,28 +6,35 @@ const Authentication = ({isSingup,authHandler,checkLogin}) => {
   let [showAlert,setShowAlert]=useState(false);
   let emaiLRef=useRef();
   let passwordRef=useRef();
+  const firstNameRef = useRef(null);
   let altClickHandler=(e,bol)=>{
-    e.preventDefault()
+    e.preventDefault();
     authHandler(bol)
+
   }
   let checkHandler=(e)=>{
     e.preventDefault();
     let email=emaiLRef.current.value;
     let password=passwordRef.current.value;
-    console.log(email,password);
     checkLogin({email,password})
   }
+  const singUpHandler=(e)=>{
+    e.preventDefault();   
+     let email=emaiLRef.current.value;
+    let password=passwordRef.current.value;
+    if(email!==null&&password!==null){
+      authHandler(false,{name:firstNameRef,email,password})
+    }
+  }
   const SingUp=() => {
-    const[isSco,setIsco]=useState(false)
   return (
-    < >
-    <input type="text" placeholder='Your Frist Name' />
-      <input type="text" placeholder='Your Last Name' />
-      <input type="text" placeholder='Your Email Address' />
-      <label htmlFor="">Password</label>
-      <input type="text" placeholder='your pasword' />
-      <button>Sing Up</button>
-      <button className='btn-alt' onClick={(e)=>altClickHandler(e,false)}>Login</button>
+    <>
+      <input type="text" placeholder='Your Name' ref={firstNameRef} />
+      <input type="text" placeholder='Your Email Address' ref={emaiLRef} />
+      <label htmlFor="password">Password</label>
+      <input type="password" placeholder='Your Password' ref={passwordRef} />
+      <button onClick={singUpHandler}>Sign Up</button>
+      <button className='btn-alt' onClick={(e) => altClickHandler(e)}>Login</button>
     </>
   )
 }
